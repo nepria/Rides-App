@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MainFragment"
+    android:background="#302c2c">
+
+    <View
+        android:id="@+id/BlackView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Edurov"
+        android:fontFamily="@font/fontbold"
+        android:textSize="32dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf ="@id/BlackView"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Username"
+        android:textSize="18dp"
+        android:fontFamily="@font/fontbold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/BlackView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="209dp"
+        android:layout_marginEnd="54dp"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileimage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintStart_toEndOf="@id/username"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/BlackView"
+        android:layout_marginTop="23dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+        />
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BlackView"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scrollable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ride"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Rides"
+                android:textColor="#ABABAB"
+                android:fontFamily="@font/interlight"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="20dp"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="@id/scrollable"
+                app:layout_constraintTop_toTopOf="@+id/scrollable"
+                />
+
+            <TextView
+                android:id="@+id/nearest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nearest"
+                app:layout_constraintStart_toEndOf ="@id/ride"
+                android:textColor="#ABABAB"
+                app:layout_constraintTop_toTopOf="@id/scrollable"
+                app:layout_constraintEnd_toStartOf="@id/upcoming"
+                android:fontFamily="@font/interregular"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="21dp"
+                android:textSize="12dp"
+                />
+
+            <TextView
+                android:id="@+id/upcoming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upcoming (4)"
+                app:layout_constraintStart_toEndOf ="@id/nearest"
+                android:textColor="#ABABAB"
+                app:layout_constraintTop_toTopOf="@id/scrollable"
+                app:layout_constraintEnd_toStartOf="@id/past"
+                android:fontFamily="@font/interregular"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="21dp"
+                android:textSize="12dp"
+                />
+
+            <TextView
+                android:id="@+id/past"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Past (7)"
+                app:layout_constraintStart_toEndOf ="@id/upcoming"
+                android:textColor="#ABABAB"
+                app:layout_constraintTop_toTopOf="@id/scrollable"
+                app:layout_constraintEnd_toStartOf="@id/filtericon"
+                android:fontFamily="@font/interregular"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="21dp"
+                android:textSize="12dp"
+                />
+
+            <ImageView
+                android:id="@+id/filtericon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/vector"
+                app:layout_constraintStart_toEndOf="@id/past"
+                app:layout_constraintTop_toTopOf="@id/scrollable"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filters"
+                android:textColor="#F2F2F2"
+                android:textSize="12dp"
+                android:fontFamily="@font/intermedium"
+                app:layout_constraintStart_toEndOf="@id/filtericon"
+                app:layout_constraintTop_toTopOf="@id/scrollable"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
